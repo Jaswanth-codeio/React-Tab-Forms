@@ -1,0 +1,35 @@
+export default Settings = ({ data, setData }) => {
+  const { theme } = data;
+  const handleDataChange = (e) => {
+    setData((prevState) => ({
+      ...prevState,
+      theme: e.target.name,
+    }));
+  };
+  return (
+    <div>
+      <div>
+        <label>
+          <input
+            type="radio"
+            name="dark"
+            checked={theme === "dark"}
+            onChange={handleDataChange}
+          ></input>
+        </label>
+        dark
+      </div>
+      <div>
+        <label>
+          <input
+            type="radio"
+            name="light"
+            checked={theme === "light"}
+            onChange={handleDataChange}
+          ></input>
+        </label>
+        light
+      </div>
+    </div>
+  );
+};
